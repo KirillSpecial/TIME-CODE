@@ -1,0 +1,54 @@
+<center>
+    <html>        
+    <body>
+        <input type=button value="Show Time" onclick="alert(new Date())">
+    </body>    
+</html>
+<html>        
+<body>
+<script type="text/javascript">
+function getDate()
+{
+    var date = new Date();
+    var hours = date.getHours();
+    var minutes = date.getMinutes();
+    var seconds = date.getSeconds();
+    //По надобности условие ниже повторить с minutes и hours
+    if(seconds < 10)
+    {
+        seconds = '0' + seconds;
+    }
+    document.getElementById('timedisplay').innerHTML = hours + ':' + minutes + ':' + seconds;
+}
+setInterval(getDate, 0);
+</script>
+<div id="timedisplay"></div>
+</body>    
+</html>
+<script language="JavaScript">
+
+    function fulltime () {
+    var time=new Date();
+    document.clock.full.value=time.toLocaleString();
+    setTimeout('fulltime()',500)
+    }
+    </script><!-- информер даты и времени на сайт | число месяц год время  --><a href="http://zagd.ru/node/43"><form name="clock"><input size="30" name="full"></form><script language="JavaScript">
+    fulltime ();
+    </script>
+    <script>
+        function setPageTime() {
+    var currentDateObj = document.getElementById('current-date');
+    if (currentDateObj) {
+        var monthList = new Array('января', 'февраля', 'марта', 'апреля', 'мая', 'июня', 'июля', 
+            'августа', 'сентября', 'октября', 'ноября', 'декабря');
+        var currDate = new Date();
+        var m = monthList[currDate.getMonth()];
+        var s = check_zero(currDate.getDate()) + ' ' + m + ' ' + Math.round(currDate.getFullYear()%1000) + ' ' +
+            check_zero(currDate.getHours()) + ':' + check_zero(currDate.getMinutes()) + ':' + 
+            check_zero(currDate.getSeconds());
+        currentDateObj.innerHTML = s;
+    }
+    setTimeout('setPageTime(1000)');}
+    </script>
+    <div id="current-date"></div>
+</center>
